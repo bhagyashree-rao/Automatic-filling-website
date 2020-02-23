@@ -49,6 +49,9 @@ while True:
         barcodeData = barcode.data.decode("utf-8")
         barcodeType = barcode.type
         print(barcodeData)
+        file=open("dd.txt","w")
+        file.truncate()
+        file.write(barcodeData)
 # draw the barcode data and barcode type on the image
         text = "{} ({})".format(barcodeData, barcodeType)
         cv2.putText(frame, text, (x, y - 10),
